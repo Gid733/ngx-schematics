@@ -1,0 +1,11 @@
+<<%=dasherize(model.prefix)%>-<%=dasherize(name)%>-table
+(edit<%= classify(name) %>)="onEdit<%= classify(name) %>($event)"
+(delete<%= classify(name) %>)="onRemoval<%= classify(name) %>($event)">
+</<%=dasherize(model.prefix)%>-<%=dasherize(name)%>-table>
+
+<<%=dasherize(model.prefix)%>-<%=dasherize(name)%>-create (create<%= classify(name) %>)="onCreate<%= classify(name) %>($event)">
+</<%=dasherize(model.prefix)%>-<%=dasherize(name)%>-create>
+<<%=dasherize(model.prefix)%>-<%=dasherize(name)%>-edit (update<%= classify(name) %>)="onUpdate<%= classify(name) %>($event)">
+</<%=dasherize(model.prefix)%>-<%=dasherize(name)%>-edit>
+<<%=dasherize(model.prefix)%>-<%=dasherize(name)%>-delete (delete<%= classify(name) %>)="onDelete<%= classify(name) %>($event)">
+</<%=dasherize(model.prefix)%>-<%=dasherize(name)%>-delete>

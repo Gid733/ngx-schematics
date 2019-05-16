@@ -1,0 +1,22 @@
+<form name="<%= camelize(name) %>From" [formGroup]="<%= camelize(name) %>Form"
+      (ngSubmit)="onSubmit()">
+    <% for (let field of model.fields) { %>
+    <div class="form-group mb-6">
+        <label for="<%=field.name%>" class="label-1 text-white"><%=field.name%></label>
+        <input type="text" formControlName="<%=field.name%>"
+               [ngClass]="{'is-valid': submitted && !f.<%=field.name%>.errors, 'is-invalid' : submitted && f.<%=field.name%>.errors}"
+               class="form-control form-control-lg style-1"
+               id="<%=field.name%>"
+               name="<%=field.name%>">
+        <span class="text-danger" *ngIf="submitted && f.<%=field.name%>.errors">
+              <%=classify(field.name)%> is required
+                </span>
+    </div>
+
+    <% } %>
+    <div>
+        <button type="submit" class="btn btn-primary">
+            Update
+        </button>
+    </div>
+</form>

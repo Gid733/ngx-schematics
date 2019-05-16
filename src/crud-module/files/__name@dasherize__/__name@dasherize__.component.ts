@@ -25,6 +25,7 @@ export class <%= classify(name) %>Component implements OnInit {
     };
     <%= camelize(name) %>Models: <%= classify(name) %>Models;
     createSub$: Subscription;
+    deleteSub$: Subscription;
     updateSub$: Subscription;
     getSingleSub$: Subscription;
     getAllSub$: Subscription;
@@ -36,7 +37,7 @@ export class <%= classify(name) %>Component implements OnInit {
     }
 
     getAll<%= classify(name)%>() {
-        this.getAllSub$ = this.<%= camelize(name) %>Servivce.getAll<%= classify(name) %>s(model).subscribe((data) => {
+        this.getAllSub$ = this.<%= camelize(name) %>Servivce.getAll<%= classify(name) %>s(this.requestModel).subscribe((data) => {
             this.<%= camelize(name) %>Models = {...data};
         });
     }
@@ -62,7 +63,7 @@ export class <%= classify(name) %>Component implements OnInit {
     }
 
     onDelete<%= classify(name) %>(id: number) {
-        this.createSub$ = this.<%= camelize(name) %>Servivce.delete<%= classify(name) %>(id).subscribe((data) => {
+        this.deleteSub$ = this.<%= camelize(name) %>Servivce.delete<%= classify(name) %>(id).subscribe((data) => {
 
         });
     }

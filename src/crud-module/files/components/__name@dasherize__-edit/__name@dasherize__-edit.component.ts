@@ -21,7 +21,8 @@ export class <%= classify(name) %>EditComponent implements OnInit {
 
     initForm() {
         this.<%= camelize(name) %>Form = this.formBuilder.group({
-        <% for (let field of model.fields) { %><%=field.name%>: <%=field.default%>,<% } %>
+        <% for (let field of model.fields) { %><%=field.name%>: <%=field.default%>,
+        <% } %>
     });
     }
 
